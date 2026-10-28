@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NVForward Year 2 Summary</title>
+<meta name="description" content="NVForward Executive Summary, Hawkins Grant Year 2 (October 2025 – September 2026).">
+<style>
+:root{
+  --red:#B10202; --cream:#f3ead7; --navy:#1f3a5f; --navy-soft:#a9b8cc; --gray:#c9c9c9;
+  --ink:#1d1d1f; --muted:#5f6368; --line:#e2e2e2; --bg:#ffffff;
+  --green:#1e7a34; --amber:#b26b00;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+.band-red{background:var(--red);color:#fff}
+.band-red .wrap{padding-top:28px;padding-bottom:22px}
+.band-red h1{margin:0;font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:.01em}
+.band-cream{background:var(--cream);font-weight:700;font-size:15px}
+.band-cream .wrap{padding-top:10px;padding-bottom:10px}
+main .wrap{padding-top:28px;padding-bottom:40px}
+.headline{font-size:clamp(22px,3.6vw,28px);line-height:1.25;margin:0 0 8px;font-weight:800}
+.byline{color:var(--muted);margin:0 0 24px;font-size:15px}
+h2{color:var(--red);font-size:24px;margin:44px 0 10px;font-weight:800}
+p{margin:0 0 12px}
+.lead b{color:var(--ink)}
+/* KPI tiles */
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin:8px 0 8px}
+.kpi{border:1px solid var(--line);border-top:5px solid var(--red);border-radius:6px;padding:14px 16px}
+.kpi b{display:block;font-size:34px;line-height:1.05;color:var(--navy);font-variant-numeric:tabular-nums}
+.kpi span{display:block;color:var(--muted);font-size:13px;margin-top:4px}
+/* Figures */
+figure{margin:22px 0 26px;padding:18px 18px 12px;border:1px solid var(--line);border-radius:8px}
+.fig-no{display:block;text-align:center;color:var(--red);font-weight:700;font-size:13px}
+.fig-title{text-align:center;font-weight:800;font-size:17px;margin:2px 0 14px}
+figcaption{color:var(--muted);font-size:13px;margin-top:10px;border-top:1px solid var(--line);padding-top:8px}
+.legend{display:flex;flex-wrap:wrap;gap:14px;justify-content:center;font-size:13px;color:var(--muted);margin:-4px 0 12px}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+.chart .row{display:grid;grid-template-columns:minmax(150px,34%) 1fr;gap:4px 12px;align-items:center;margin:9px 0}
+.chart .lab{font-size:14px;text-align:right}
+.chart .lab small{display:block;color:var(--muted);font-size:12px}
+.track{position:relative;height:22px}
+.bar{position:absolute;top:3px;height:16px;border-radius:2px;background:var(--navy)}
+.bar.alt{background:var(--navy-soft)}
+.bar.red{background:var(--red)}
+.bar.gray{background:var(--gray)}
+.val{position:absolute;top:1px;font-size:13px;font-weight:700;white-space:nowrap;font-variant-numeric:tabular-nums}
+.tgt{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--red)}
+.tgt span{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);font-size:11px;color:var(--red);white-space:nowrap}
+.pair .track{height:34px}
+.pair .bar{height:13px}
+.pair .bar.b2{top:18px}
+.pair .val{font-size:12px;top:0}
+.pair .val.b2{top:16px}
+.axis{position:relative;height:18px;font-size:11px;color:var(--muted);margin-top:2px}
+.axis span{position:absolute;transform:translateX(-50%)}
+.gridline{position:absolute;top:0;bottom:0;width:1px;background:#eee}
+/* Status stack */
+.stack{display:flex;height:34px;border-radius:4px;overflow:hidden;font-size:13px;font-weight:700;color:#fff}
+.stack div{display:flex;align-items:center;justify-content:center;white-space:nowrap;padding:0 6px}
+/* Table */
+.table{overflow-x:auto;margin:10px 0}
+table{border-collapse:collapse;width:100%;font-size:14px}
+th{color:var(--red);text-align:left;font-size:13px;padding:6px 8px;border-bottom:2px solid var(--red)}
+td{padding:7px 8px;border-bottom:1px solid var(--line);vertical-align:top}
+td:first-child{font-weight:700}
+.st{font-weight:700;white-space:nowrap}
+.st.ex{color:var(--green)} .st.met{color:var(--green)} .st.prog{color:var(--amber)} .st.pend{color:var(--amber)} .st.na{color:var(--muted)}
+.note{color:var(--muted);font-size:13px}
+/* CI chart */
+.ci{position:relative;height:96px;margin:6px 8px 0}
+.ci .zero{position:absolute;top:0;bottom:22px;width:2px;background:var(--ink)}
+.ci .whisk{position:absolute;top:34px;height:2px;background:var(--navy)}
+.ci .cap{position:absolute;top:26px;width:2px;height:18px;background:var(--navy)}
+.ci .dot{position:absolute;top:27px;width:16px;height:16px;border-radius:50%;background:var(--navy);transform:translateX(-50%)}
+.ci .lbl{position:absolute;top:2px;transform:translateX(-50%);font-size:13px;font-weight:700;white-space:nowrap}
+.ci .axis{position:absolute;left:0;right:0;bottom:0}
+footer{border-top:1px solid var(--line);margin-top:20px}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;padding-top:16px;padding-bottom:24px;font-size:13px;color:var(--muted)}
+footer b{color:var(--ink);display:block}
+@media (max-width:560px){
+  .chart .row{grid-template-columns:1fr}
+  .chart .lab{text-align:left}
+  figure{padding:14px 12px 10px}
+  .stack{font-size:11px}
+}
+</style>
+</head>
+<body>
+
+<div class="band-red"><div class="wrap"><h1>EXECUTIVE SUMMARY</h1></div></div>
+<div class="band-cream"><div class="wrap">Hawkins Grant Year 2 | October 2025 – September 2026</div></div>
+
+<main><div class="wrap">
+
+<p class="headline">NVForward Met or Exceeded 16 of 18 Year 2 Targets. Enrollment Reached 474, Graduation Held at 86%, and Nearly Every Graduate Is Licensed.</p>
+<p class="byline">Nevada Forward Evaluation Team, <em>UNLV College of Education</em> · Prepared for the Hawkins grant annual report (activity 4a.2) · Updated October 28, 2026</p>
+
+<div class="kpis">
+  <div class="kpi"><b>474</b><span>Apprentices enrolled (target 315)</span></div>
+  <div class="kpi"><b>86.1%</b><span>Graduation rate, 165 of 193 (target 65%)</span></div>
+  <div class="kpi"><b>96%</b><span>Graduates holding a Nevada license</span></div>
+  <div class="kpi"><b>16 of 18</b><span>Year 2 activity targets met or exceeded</span></div>
+</div>
+
+<h2>Highlights</h2>
+<p class="lead"><b>The pipeline grew and held together.</b> Enrollment beat target by 50% and the graduation rate cleared its target by 21 points. Employer agreements cover 10 of Nevada's 17 districts.</p>
+<p class="lead"><b>Apprentices rate the program highly.</b> Every satisfaction measure cleared its target, and 93% of exiting graduates felt prepared to teach.</p>
+<p class="lead"><b>Retention and placement remain the open items.</b> Graduates have not yet taught a full year, and district employment records are still pending.</p>
+
+<figure>
+  <span class="fig-no">Figure 1</span>
+  <div class="fig-title">16 of 18 Year 2 Targets Met or Exceeded</div>
+  <div class="stack" role="img" aria-label="10 exceeded, 6 met, 2 in progress or pending">
+    <div style="flex:10;background:var(--green)">Exceeded · 10</div>
+    <div style="flex:6;background:#6aa77a">Met · 6</div>
+    <div style="flex:2;background:var(--amber)">Open · 2</div>
+  </div>
+  <div class="table">
+  <table>
+    <thead><tr><th>Goal and activity</th><th>Year 2 target</th><th>Year 2 result</th><th>Status</th></tr></thead>
+    <tbody>
+      <tr><td>1a.1 Employer agreements with districts</td><td>10 of 17</td><td>10 of 17</td><td class="st met">Met</td></tr>
+      <tr><td>1b.1 Information sessions</td><td>7</td><td>13 (8 in person, 5 virtual)</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>1b.2 Social media recruitment posts</td><td>12</td><td>24</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>1b.3 Admissions and financial aid newsletters</td><td>2</td><td>2</td><td class="st met">Met</td></tr>
+      <tr><td>1b.3 Apprentice enrollment (RAPIDS)</td><td>315</td><td>474</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>1c.1 Graduation rate</td><td>65%</td><td>86.1% (165 of 193)</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>2a.1 Hours of RTI delivered</td><td>40 hours</td><td>40+ hours</td><td class="st met">Met</td></tr>
+      <tr><td>2a.2 Satisfaction with RTI and PD</td><td>75%</td><td>88.9%</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>2a.3 Knowledge, skill and self-efficacy surveys</td><td>TBD</td><td>Fielded; not yet significant</td><td class="st prog">In progress</td></tr>
+      <tr><td>2b.1 Satisfaction with coaching and concierge</td><td>73%</td><td>86.4%</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>2b.2 Alumni interviews on support services</td><td>Research log</td><td>8 interviews</td><td class="st met">Met</td></tr>
+      <tr><td>3a.1 Alumni with access to Guides on Demand</td><td>75%</td><td>100%</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>3a.2 Alumni retention (annual census)</td><td>90%</td><td>Not yet measurable</td><td class="st pend">Pending</td></tr>
+      <tr><td>4a.1 Survey response rate</td><td>40%</td><td>67.7%</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>4a.2 Annual executive summary</td><td>1</td><td>1</td><td class="st met">Met</td></tr>
+      <tr><td>4b.1 Conference presentations</td><td>2</td><td>2</td><td class="st met">Met</td></tr>
+      <tr><td>4b.2 Manuscripts published</td><td>1</td><td>3</td><td class="st ex">Exceeded</td></tr>
+      <tr><td>4b.3 Policy papers shared with legislators</td><td>1</td><td>2</td><td class="st ex">Exceeded</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <figcaption>Source: UNLV Hawkins Project Status Chart, Year 2 final update (October 2026).</figcaption>
+</figure>
+
+<h2>Goal 1: Recruitment and the Apprenticeship Pipeline</h2>
+<p><b>Every recruitment output met or beat its target.</b> Social media doubled its goal, and information sessions nearly doubled theirs.</p>
+
+<figure>
+  <span class="fig-no">Figure 2</span>
+  <div class="fig-title">Recruitment Outputs as a Share of Year 2 Target</div>
+  <div class="legend"><span><i style="background:var(--navy)"></i>Result</span><span><i style="background:var(--navy-soft)"></i>Virtual sessions</span><span><i style="background:var(--red);width:3px"></i>Target (100%)</span></div>
+  <div class="chart" id="fig2"></div>
+  <figcaption>Bars show result ÷ target, capped at 200%. Source: Hawkins status chart; Year 2 final update for session format.</figcaption>
+</figure>
+
+<p><b>The graduating class mirrors the enrolled population.</b> 60.4% of apprentices are from a racial or ethnic minority group, and no group's share of graduates is more than four points off its share of enrollment.</p>
+
+<figure>
+  <span class="fig-no">Figure 3</span>
+  <div class="fig-title">Graduates Mirror the Enrolled Population</div>
+  <div class="legend"><span><i style="background:var(--navy)"></i>Enrolled (n = 501)</span><span><i style="background:var(--navy-soft)"></i>Graduated (n = 177)</span></div>
+  <div class="chart pair" id="fig3"></div>
+  <figcaption>Source: UNLV student-level outcomes extract, AY 2025-26. "Other" combines non-resident, Pacific Islander and unknown. Women are 85.4% of apprentices and 85.9% of graduates.</figcaption>
+</figure>
+
+<figure>
+  <span class="fig-no">Figure 4</span>
+  <div class="fig-title">Year 2 Cohorts Finished in About 15 Months</div>
+  <div class="legend"><span><i style="background:var(--navy)"></i>Year 2 cohorts</span><span><i style="background:var(--gray)"></i>Earlier cohorts</span></div>
+  <div class="chart" id="fig4"></div>
+  <figcaption>Median months from start to completion. Program-wide, only 8 of 743 graduates have taken more than 24 months. PPP 8.0 completed at 97.6% and PPP 9.0 / RSA 4.0 at 89.4%. Source: UNLV student-level outcomes extract.</figcaption>
+</figure>
+
+<h2>Goal 2: Professional Growth and Apprentice Support</h2>
+<p><b>Every satisfaction and completion rate cleared its target.</b> Coaching satisfaction rose to 86.4% against a 73% target.</p>
+
+<figure>
+  <span class="fig-no">Figure 5</span>
+  <div class="fig-title">Every Rate Measure Cleared Its Year 2 Target</div>
+  <div class="chart" id="fig5"></div>
+  <figcaption>Red marks show the Year 2 target. Source: Hawkins status chart, CREA professional development surveys, 2025-26.</figcaption>
+</figure>
+
+<figure>
+  <span class="fig-no">Figure 6</span>
+  <div class="fig-title">Self-Efficacy Gain Favors NVForward, Not Yet Significant</div>
+  <div class="ci" id="fig6"></div>
+  <figcaption>Estimated pre-to-post change versus a traditional-pathway group: +0.42 points (SE = 0.26, p = .119); dot = estimate, whisker = 95% confidence interval. CREA attributes the wide interval to survey attrition and a small comparison group.</figcaption>
+</figure>
+
+<figure>
+  <span class="fig-no">Figure 7</span>
+  <div class="fig-title">Graduates Feel Prepared; Staff Responsiveness Rates Lowest</div>
+  <div class="chart" id="fig7"></div>
+  <figcaption>Share of exit-survey respondents agreeing (n = 43, Summer 2026). Responsiveness and problem-solving items ranged 56–63%. Source: NVForward End-of-Program Survey; alumni interviews (n = 8).</figcaption>
+</figure>
+
+<h2>Goal 3: Retention and Early-Career Support</h2>
+<p><b>Licensure is high and consistent across groups; retention is not yet measurable.</b> 170 of 177 graduates hold a Nevada license. Guides on Demand reached 100% of alumni.</p>
+
+<figure>
+  <span class="fig-no">Figure 8</span>
+  <div class="fig-title">At Least 94% of Every Group Is Licensed</div>
+  <div class="chart" id="fig8"></div>
+  <figcaption>Share of Year 2 graduates holding a Nevada teaching license. Source: UNLV student-level outcomes extract.</figcaption>
+</figure>
+
+<h2>Goal 4: Research and Dissemination</h2>
+<p><b>Every dissemination target was met or exceeded.</b> Manuscripts tripled their target.</p>
+<div class="kpis">
+  <div class="kpi"><b>2 / 2</b><span>Conference presentations</span></div>
+  <div class="kpi"><b>3 / 1</b><span>Manuscripts published</span></div>
+  <div class="kpi"><b>2 / 1</b><span>Policy papers to legislators</span></div>
+  <div class="kpi"><b>67.7%</b><span>Survey response rate (target 40%)</span></div>
+</div>
+
+<h2>Hawkins Outcome Measures</h2>
+<div class="table">
+<table>
+  <thead><tr><th>Measure</th><th>Year 2 result</th><th>Status</th></tr></thead>
+  <tbody>
+    <tr><td>(a) Completers by race and ethnicity</td><td>177 graduates; see Figure 3</td><td class="st met">Reported</td></tr>
+    <tr><td>(b) Certified and placed in high-need schools</td><td>Placement pending district records; licensure 170 of 177 (96.0%)</td><td class="st pend">Pending</td></tr>
+    <tr><td>(c) Bilingual or multilingual completers</td><td>51 completers (31%)</td><td class="st met">Reported</td></tr>
+    <tr><td>(d) Bilingual completers placed</td><td>Not yet reported</td><td class="st pend">Pending</td></tr>
+    <tr><td>(e) First-time teachers retained</td><td>Pending district employment records</td><td class="st pend">Pending</td></tr>
+    <tr><td>(f) Employed three consecutive years</td><td>Not reportable in year two</td><td class="st na">Not yet due</td></tr>
+    <tr><td>(g) Teaching in shortage fields</td><td>Pending district employment records</td><td class="st pend">Pending</td></tr>
+  </tbody>
+</table>
+</div>
+<p class="note"><b>Data notes.</b> Enrollment (474) and graduation rate (86.1%, 165 of 193) follow the Hawkins status chart and the CREA report. Diversity, licensure and time-to-completion figures use the student-level extract (501 enrolled, 177 graduates). The master file flags 30 possible duplicate records and 6 repeated NSHE IDs, 11 among Year 2 apprentices.</p>
+
+</div></main>
+
+<footer><div class="wrap">
+  <div><b>NV FORWARD</b>UNLV College of Education · unlv.edu/education</div>
+  <div>Year 2 · Oct 2025 – Sep 2026</div>
+</div></footer>
+
+<script>
+(function(){
+  function el(tag, cls, html){var e=document.createElement(tag); if(cls)e.className=cls; if(html!=null)e.innerHTML=html; return e;}
+  function pct(v,min,max){return ((v-min)/(max-min)*100)+'%';}
+  function axis(min,max,step,fmt){
+    var a=el('div','axis');
+    for(var v=min;v<=max+1e-9;v+=step){var s=el('span',null,fmt(v)); s.style.left=pct(v,min,max); a.appendChild(s);}
+    var r=el('div','row'); r.appendChild(el('div','lab','')); r.appendChild(a); return r;
+  }
+  // Generic horizontal bar chart
+  function hbars(id, rows, o){
+    var root=document.getElementById(id), min=o.min||0, max=o.max;
+    rows.forEach(function(d){
+      var row=el('div','row'), lab=el('div','lab', d.label + (d.sub?'<small>'+d.sub+'</small>':'')), tr=el('div','track');
+      var span=max-min, start=min, end;
+      if(d.from!=null){
+        var rb=el('div','bar '+(d.cls||'')); rb.style.left=pct(d.from,min,max); rb.style.width=((d.v-d.from)/span*100)+'%'; tr.appendChild(rb); end=d.v;
+      } else {
+        d.segs.forEach(function(s){
+          var w=Math.min(s.v, max-start); if(w<=0) return;
+          var b=el('div','bar '+(s.cls||'')); b.style.left=pct(start,min,max); b.style.width=(w/span*100)+'%';
+          tr.appendChild(b); start+=w;
+        });
+        end=start;
+      }
+      var v=el('div','val',d.text); v.style.left='calc('+pct(end,min,max)+' + 6px)';
+      if(end/(max-min)>0.8){v.style.left='auto'; v.style.right='calc('+(100-parseFloat(pct(end,min,max)))+'% + 6px)'; v.style.color='#fff';}
+      tr.appendChild(v);
+      if(d.t!=null){var t=el('div','tgt', d.tlabel?'<span>'+d.tlabel+'</span>':''); t.style.left=pct(d.t,min,max); tr.appendChild(t);}
+      row.appendChild(lab); row.appendChild(tr); root.appendChild(row);
+    });
+    if(o.axis) root.appendChild(axis(min,max,o.step,o.fmt));
+  }
+
+  // Fig 2: % of target
+  hbars('fig2',[
+    {label:'Social media posts',sub:'24 of 12',segs:[{v:200}],text:'200%',t:100},
+    {label:'Information sessions',sub:'13 of 7 · 8 in person, 5 virtual',segs:[{v:8/7*100},{v:5/7*100,cls:'alt'}],text:'186%',t:100},
+    {label:'Enrollment',sub:'474 of 315',segs:[{v:474/315*100}],text:'150%',t:100},
+    {label:'District agreements',sub:'10 of 10',segs:[{v:100}],text:'100%',t:100},
+    {label:'Newsletters',sub:'2 of 2',segs:[{v:100}],text:'100%',t:100}
+  ],{min:0,max:200,axis:true,step:50,fmt:function(v){return v+'%';}});
+
+  // Fig 3: paired bars enrolled vs graduated
+  (function(){
+    var root=document.getElementById('fig3'), max=50;
+    [['Hispanic',39.3,35.6],['White',36.7,38.4],['Black',12.0,12.4],['Two or more',6.4,7.9],['Asian',4.2,3.4],['Other',1.4,2.3]].forEach(function(d){
+      var row=el('div','row'), tr=el('div','track');
+      var b1=el('div','bar'); b1.style.left='0'; b1.style.width=pct(d[1],0,max);
+      var b2=el('div','bar alt b2'); b2.style.left='0'; b2.style.width=pct(d[2],0,max);
+      var v1=el('div','val',d[1].toFixed(1)+'%'); v1.style.left='calc('+pct(d[1],0,max)+' + 6px)';
+      var v2=el('div','val b2',d[2].toFixed(1)+'%'); v2.style.left='calc('+pct(d[2],0,max)+' + 6px)';
+      [b1,b2,v1,v2].forEach(function(x){tr.appendChild(x);});
+      row.appendChild(el('div','lab',d[0])); row.appendChild(tr); root.appendChild(row);
+    });
+  })();
+
+  // Fig 4: median months by cohort
+  hbars('fig4',[
+    {label:'PPP 5.0',segs:[{v:10.9,cls:'gray'}],text:'10.9'},
+    {label:'PPP 7.0',segs:[{v:11.6,cls:'gray'}],text:'11.6'},
+    {label:'PPP 8.0',sub:'Year 2',segs:[{v:15.7}],text:'15.7'},
+    {label:'PPP 9.0 / RSA 4.0',sub:'Year 2',segs:[{v:14.8}],text:'14.8'}
+  ],{min:0,max:24,axis:true,step:6,fmt:function(v){return v+' mo';}});
+
+  // Fig 5: rates vs target
+  hbars('fig5',[
+    {label:'Alumni with Guides on Demand',segs:[{v:100}],text:'100%',t:75,tlabel:'target 75%'},
+    {label:'RTI and PD satisfaction',segs:[{v:88.9}],text:'88.9%',t:75,tlabel:'target 75%'},
+    {label:'Coaching and concierge satisfaction',segs:[{v:86.4}],text:'86.4%',t:73,tlabel:'target 73%'},
+    {label:'Graduation rate',segs:[{v:86.1}],text:'86.1%',t:65,tlabel:'target 65%'}
+  ],{min:0,max:100,axis:true,step:25,fmt:function(v){return v+'%';}});
+
+  // Fig 6: CI
+  (function(){
+    var root=document.getElementById('fig6'), min=-0.5, max=1.5, est=0.42, lo=+(0.42-1.96*0.26).toFixed(2), hi=+(0.42+1.96*0.26).toFixed(2);
+    var z=el('div','zero'); z.style.left=pct(0,min,max); root.appendChild(z);
+    var w=el('div','whisk'); w.style.left=pct(lo,min,max); w.style.width=((hi-lo)/(max-min)*100)+'%'; root.appendChild(w);
+    [lo,hi].forEach(function(x){var c=el('div','cap'); c.style.left=pct(x,min,max); root.appendChild(c);});
+    var d=el('div','dot'); d.style.left=pct(est,min,max); root.appendChild(d);
+    var l=el('div','lbl','+0.42 (95% CI '+lo+' to +'+hi+')'); l.style.left=pct(est,min,max); root.appendChild(l);
+    var a=el('div','axis'); [-0.5,0,0.5,1,1.5].forEach(function(v){var s=el('span',null,(v>0?'+':'')+v+(v===0?' (no difference)':'')); s.style.left=pct(v,min,max); a.appendChild(s);}); root.appendChild(a);
+  })();
+
+  // Fig 7: exit survey
+  hbars('fig7',[
+    {label:'Expect to teach in Nevada in 1 year',segs:[{v:95}],text:'95%'},
+    {label:'Felt prepared to teach',segs:[{v:93}],text:'93%'},
+    {label:'Expect to teach in Nevada in 3 years',segs:[{v:93}],text:'93%'},
+    {label:'Satisfied with the program',segs:[{v:88}],text:'88%'},
+    {label:'Would choose the program again',segs:[{v:86}],text:'86%'},
+    {label:'Staff responsiveness and problem-solving',from:56,v:63,cls:'red',text:'56–63%'}
+  ],{min:0,max:100,axis:true,step:25,fmt:function(v){return v+'%';}});
+
+  // Fig 8: licensure by group
+  hbars('fig8',[
+    {label:'Asian',sub:'6 of 6',segs:[{v:100}],text:'100%'},
+    {label:'Two or more races',sub:'14 of 14',segs:[{v:100}],text:'100%'},
+    {label:'White',sub:'66 of 68',segs:[{v:97.1}],text:'97.1%'},
+    {label:'Black',sub:'21 of 22',segs:[{v:95.5}],text:'95.5%'},
+    {label:'Hispanic',sub:'59 of 63',segs:[{v:93.7}],text:'93.7%'}
+  ],{min:0,max:100,axis:true,step:25,fmt:function(v){return v+'%';}});
+})();
+</script>
+</body>
+</html>
